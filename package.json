@@ -1,0 +1,26 @@
+{
+  "name": "swimlane-sample",
+  "version": "0.0.1",
+  "description": "Test swimlane",
+  "main": "assets/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://diko316@github.com/diko316/swimlane-sample.git"
+  },
+  "keywords": [
+    "Test",
+    "AngularJS"
+  ],
+  "author": "Diko Tech Slave",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/diko316/swimlane-sample/issues"
+  },
+  "homepage": "https://github.com/diko316/swimlane-sample#readme",
+  "dependencies": {
+    "angular": "^1.6.2"
+  }
+}

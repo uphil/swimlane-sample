@@ -1,0 +1,15 @@
+version: '2'
+    
+services:
+  swimlane-sample:
+    image: swimlane-sample
+    build:
+       context: .
+       dockerfile: Dockerfile
+    container_name: swimlane-sample
+
+    volumes:
+     - .:/opt/app/public:ro
+      
+    ports:
+      - "3000:3000"

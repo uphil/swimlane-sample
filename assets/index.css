@@ -1,0 +1,29 @@
+
+html,
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+}
+
+.status-column {
+    float: left;
+    min-width: 200px;
+    
+}
+
+.status-column .ticket {
+    border: 1px solid blue;
+    background-color: #efefef;
+}
+
+
+.mouse-drag-proxy {
+    position: fixed;
+    display: none;
+    border: 1px solid black;
+}
+
+
+.mouse-drag-proxy.dragging {
+    display: inline-block;
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+    
+<html ng-app="swimlane">
+    <head>
+        <title>Swimlane Test</title>
+        <link rel="stylesheet" href="assets/index.css" type="text/css" media="screen" charset="utf-8" />
+    </head>
+    <body>
+        <div ng-controller="Swimlane as swimlane">
+            <div class="ticket-create-form">
+                <div>
+                    <label>title</label>
+                    <input type="text" ng-model="createForm.title" />
+                </div>
+                <div>
+                    <label>Description</label>
+                    <input type="text" ng-model="createForm.description" />
+                </div>
+                <div>
+                    <button type="button"
+                        ng-click="swimlane.add(createForm.title, createForm.description)">Create!</button>
+                </div>
+            </div>
+            
+            
+            <!-- pending -->
+            <div class="status-column"
+                 ng-class="'status-column-' + (status | ticketStatus).name"
+                 ng-repeat="status in swimlane.statusList track by $index"
+                 mouse-drop="$dropData.status = (status | ticketStatus)">
+                
+                <h2 ng-bind="(status | ticketStatus).label"></h2>
+                
+                <div class="ticket"
+                     mouse-drag="ticket"
+                     mouse-drag-label="ticket.title"
+                     ng-class="'ticket-status-' + status"
+                     ng-repeat="ticket in (swimlane.list() | ticketListStatus:status) track by $index">
+                    
+                    <div class="swimlane-ticket">
+                        <h4 ng-bind="ticket.title"></h4>
+                        <p ng-bind="ticket.description"></p>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+        <script src="node_modules/angular/angular.min.js" type="text/javascript"></script>
+        
+        <script src="assets/swimlane-module.js" type="text/javascript"></script>
+        <script src="assets/swimlane/controller.js" type="text/javascript"></script>
+        <script src="assets/swimlane/service.js" type="text/javascript"></script>
+        
+        <script src="assets/ticket/status-filter.js" type="text/javascript"></script>
+        <script src="assets/ticket/list-status-filter.js" type="text/javascript"></script>
+        <script src="assets/ticket/factory.js" type="text/javascript"></script>
+        
+        
+        <script src="assets/mouse/drag-drop-service.js" type="text/javascript"></script>
+        <script src="assets/mouse/drag-directive.js" type="text/javascript"></script>
+        <script src="assets/mouse/drop-directive.js" type="text/javascript"></script>
+    </body>
+</html>
+
